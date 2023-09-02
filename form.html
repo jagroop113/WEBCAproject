@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+        }
+
+        #content {
+            height: 100vh;
+            background: #00000042;
+        }
+
+        /* NAVIGATION Bar */
+        #img {
+            align-items: center;
+            text-align: center;
+            mix-blend-mode: hard-light;
+
+        }
+
+        #img h2 {
+            color: aliceblue;
+        }
+
+        #navigation {
+            display: flex;
+            gap: 300px;
+        }
+
+        #navigation a {
+            text-decoration: none;
+            color: aliceblue;
+            text-transform: uppercase;
+            font-size: large;
+        }
+
+        #navigation a:hover {
+            text-decoration: underline;
+            color: aqua;
+
+        }
+
+        #w {
+            margin-left: 48px;
+        }
+
+        /* FORM */
+        form {
+            display: inline-block;
+            border: 2px solid whitesmoke;
+            padding: 10px;
+            color: antiquewhite;
+            font-size: larger;
+            font-weight: 800;
+            margin-left: 60%;
+            margin-top: 95px;
+            border-radius: 30px;
+            box-shadow: 2px 2px 2pc whitesmoke;
+        }
+
+        form input {
+            padding: 4px;
+        }
+
+        #b1 {
+            border-radius: 10px;
+            background: #92898949;
+            color: rgb(10, 10, 10);
+            font-weight: 600;
+
+        }
+
+        #b2 {
+            margin-left: 150px;
+            border-radius: 10px;
+            background: #92898949;
+            color: rgb(10, 10, 10);
+            font-weight: 600;
+        }
+    </style>
+
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+<boby>
+    <video autoplay muted loop>
+        <source
+            src="https://cdn.pixabay.com/vimeo/538974074/ocean-70793.mp4?width=1280&hash=89871dcdc914ee66274917191f766eabb6a5784c"
+            type="video/mp4">
+    </video>
+    <div id="content">
+        <div id="navbar">
+
+            <div id="img">
+
+                <img style="mix-blend-mode: darken;" src="logo.png" id="logo" alt="">
+                <h2>TRAVELERS</h2>
+
+            </div>
+
+            <nav id="navigation">
+                <h4> <a id="w" href="index.html">HOME </a></h4>
+                <h4> <a href="about.html">ABOUT US </a></h4>
+                <h4> <a href="programs.html"> PROGRAMS</a></h4>
+                <h4> <a href="form.html"> CONTACT US</a></h4>
+            </nav>
+        </div><br><br><br>
+        <!-- <div id="form" name="myform"> -->
+        <form action="" name="myform" onsubmit=" myfunction()">
+
+            NAME: <input type="text" name="uname" required><br><br>
+            <p id="errorname" style="color: red;"></p>
+            EMAIL: <input type="email" name="uemail" required><br><br>
+            <p id="erroremail" style="color: red;"></p>
+            PASSWORD: <input type="password" name="upass" required><br><br>
+            <p id="errorpass" style="color: red; font-size: small;"></p>
+            <button id="b1" type="reset">RESET</button>
+            <button id="b2" type="submit">SUBMIT</button>
+
+
+
+
+        </form>
+        <!-- </div>        -->
+
+
+
+    </div>
+
+    <script>
+        function myfunction() {
+            let n = document.forms.myform.uname.value;
+            let e = document.forms.myform.uemail.value;
+            let p = document.forms.myform.upass.value;
+            let emailregex = new RegExp(/^\w+([\.-]?\w+)*@\w([\.-]?\w+)*(\.w{2,3})+$/);
+            if (n == "" || n==null) {
+             return   document.getElementById("errorname").innerHTML = "ENTER YOUR NAME ";
+                
+            }
+            else (p == "" && p.length < 6) 
+               return document.getElementById("errorpass").innerHTML = "ENTER PROPER PASSWORD";
+                
+            
+           
+        }
+        // function checkCookie() {
+        //     let username = getCookie("username");
+        //     if (username != "") {
+        //         alert("Welcome again " + username);
+        //     } else {
+        //         username = prompt("Please enter your name:", "");
+        //         if (username != "" && username != null) {
+        //             setCookie("username", username, 365);
+        //         }
+        //     }
+        // }
+        document.cookie = 'cookie1=test; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/'
+        // alert(document.cookie)
+
+    </script>
+    </body>
+
+</html>
